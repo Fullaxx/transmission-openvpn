@@ -2,11 +2,6 @@
 
 PEERPORT=${PEERPORT:-51413}
 RPCPORT=${RPCPORT:-9091}
-ALLOWIP=${ALLOWIP:-172.17.0.1}
-ALLOWLIST="127.0.0.1"
-if [ -n ${ALLOWIP} ]; then
-  ALLOWLIST+=",${ALLOWIP}"
-fi
 
 bail()
 {
@@ -23,6 +18,10 @@ if [ x"${OVPNCFG}" != "x" ]; then
 fi
 
 mkdir -p /data/incomplete /data/watch /data/logs /data/config /data/dl
+
+if [ -z "${ALLOWLIST}" ]; then
+  ALLOWLIST="127.0.0.1,172.17.0.1"
+fi
 
 exec transmission-daemon -f \
 -P ${PEERPORT} -p ${RPCPORT} -a ${ALLOWLIST} \
