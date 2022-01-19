@@ -22,7 +22,7 @@ docker build -t="fullaxx/transmission-openvpn" github.com/Fullaxx/transmission-o
 
 ## Volume Options
 Input: Drop your torrents in /data/watch/ \
-Output: Your downloaded data will reside here in /data/dl/ \
+Output: Your downloaded data will reside under /data/dl/ \
 Logs: Your logs can be found here: /data/logs/
 ```
 -v /data:/data/
