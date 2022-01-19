@@ -8,9 +8,9 @@ MAINTAINER Brett Kuskie <fullaxx@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # ------------------------------------------------------------------------------
-# Install rtorrent and clean up
+# Install transmission and clean up
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends transmission-cli transmission-daemon openvpn && \
+    apt-get install -y --no-install-recommends transmission-cli transmission-daemon openvpn ca-certificates wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------

@@ -13,6 +13,13 @@ docker pull fullaxx/transmission-openvpn
 docker build -t="fullaxx/transmission-openvpn" github.com/Fullaxx/transmission-openvpn
 ```
 
+## Optional Themes
+[Soft Theme](https://git.eigenlab.org/sbiego/transmission-web-soft-theme) provided by [diesys](https://git.eigenlab.org/sbiego)
+```
+-e THEME='SOFTLIGHT'
+-e THEME='SOFTDARK'
+```
+
 ## Volume Options
 Input: Drop your torrents in /data/watch/ \
 Output: Your downloaded data will reside here in /data/dl/ \

@@ -23,6 +23,10 @@ if [ -z "${ALLOWLIST}" ]; then
   ALLOWLIST="127.0.0.1,172.17.0.1"
 fi
 
+if [ -n "${THEME}" ]; then
+  /app/setup_themes.sh
+fi
+
 exec transmission-daemon -f \
 -P ${PEERPORT} -p ${RPCPORT} -a ${ALLOWLIST} \
 --incomplete-dir /data/incomplete \
