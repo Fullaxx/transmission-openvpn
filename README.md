@@ -27,3 +27,17 @@ Logs: Your logs can be found here: /data/logs/
 ```
 -v /data:/data/
 ```
+
+## Connecting to Transmission
+The transmission web server is running on port 9091 inside the container
+```
+-p 9091:9091
+-p 172.17.0.1:9091:9091
+```
+
+## Run the image
+```
+docker run -d -p 172.17.0.1:9091:9091                      fullaxx/transmission-openvpn
+docker run -d -p 172.17.0.1:9091:9091 -e THEME='SOFTLIGHT' fullaxx/transmission-openvpn
+docker run -d -p 172.17.0.1:9091:9091 -e THEME='SOFTDARK'  fullaxx/transmission-openvpn
+```
